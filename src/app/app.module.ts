@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 /*
   @開頭的稱為 decorator
   decorators 能夠附著 metadata 到 classes 或 properties
@@ -17,7 +18,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
   declarations: [
     AppComponent,
     PlayersComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
