@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Players } from './../players';
-
-
+import { Player } from '../player';
+import { PLAYERS } from './../mock-players';
 
 @Component({
   selector: 'app-players',
@@ -11,10 +10,17 @@ import { Players } from './../players';
 export class PlayersComponent implements OnInit {
 
   constructor() { }
-  player: Players = {
+  player: Player = {
     id: 1,
     name: 'Michael Jordan'
   };
+
+  players = PLAYERS;
+  selectedPlayer: Player;
+  
+  onSelect(player: Player): void {
+    this.selectedPlayer = player;
+  }
 
   ngOnInit(): void {
   }

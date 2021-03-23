@@ -1,9 +1,21 @@
-<h2>{{player.name | uppercase}} Details</h2>
-<div><span>id: </span>{{player.id}}</div>
-<div>
-  <label>name:
-    <!-- [(ngModel)] = "value" 為雙向繫結語法, value 為 binding 對象 -->
-    <!-- 需要將 FormsModule 新增到 appModule (metadata) 才能使用-->
-    <input [(ngModel)]="player.name" placeholder="name"/>
-  </label>
+<h2>My Players</h2>
+<ul class="players">
+  <!-- *ngFor 為 repeater directive -->
+  <!-- [class.selected] = "expression" 為 class binding 可以藉由後面的判斷式來增減 class-->
+  <!-- (click)="onSelect(player)" 為 event binding -->
+  <li *ngFor="let player of players"
+      [class.selected]="player === selectedPlayer"
+      (click)="onSelect(player)">
+    <span class="badge">{{player.id}}</span> {{player.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPlayer">
+  <h2>{{selectedPlayer | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedPlayer.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPlayer.name" placeholder="name" />
+    </label>
+  </div>
 </div>
