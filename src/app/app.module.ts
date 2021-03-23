@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 /*
   @開頭的稱為 decorator
   decorators 能夠附著 metadata 到 classes 或 properties
@@ -15,7 +16,8 @@ import { PlayersComponent } from './players/players.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PlayersComponent
+    PlayersComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,
