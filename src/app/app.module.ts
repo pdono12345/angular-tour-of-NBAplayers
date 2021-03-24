@@ -6,10 +6,13 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 /*
   @開頭的稱為 decorator
   decorators 能夠附著 metadata 到 classes 或 properties
@@ -20,10 +23,12 @@ import { MessagesComponent } from './messages/messages.component';
     PlayersComponent,
     PlayerDetailComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

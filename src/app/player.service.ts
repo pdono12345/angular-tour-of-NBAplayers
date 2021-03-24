@@ -3,8 +3,8 @@
  * 在 @ Injectable meatadata 中註冊 provider 能允許 Angular 移除不需要的 service
  */
 import { Injectable } from '@angular/core';
-import { Player } from "./player";
-import { PLAYERS } from "./mock-players";
+import { Player } from './player';
+import { PLAYERS } from './mock-players';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
@@ -38,5 +38,10 @@ export class PlayerService {
   getPlayers(): Observable<Player[]> {
     this.messageService.add('PlayerService: fetched players');
     return of(PLAYERS);
+  }
+  getPlayer(id: number): Observable<Player> {
+    this.messageService.add(`PlayerService: fetch player id=${id}`);
+    // list.find 類似於 C# linq 的 list.where
+    return of(PLAYERS.find(p => p.id === id));
   }
 }

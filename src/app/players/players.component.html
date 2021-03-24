@@ -3,10 +3,18 @@
   <!-- *ngFor 為 repeater directive -->
   <!-- [class.selected] = "expression" 為 class binding 可以藉由後面的判斷式來增減 class-->
   <!-- (click)="onSelect(player)" 為 event binding -->
-  <li *ngFor="let player of players"
+  <!-- <li *ngFor="let player of players"
       [class.selected]="player === selectedPlayer"
       (click)="onSelect(player)">
     <span class="badge">{{player.id}}</span> {{player.name}}
+  </li> -->
+
+  <!-- 以上為舊版本 -->
+
+  <li *ngFor="let player of players">
+    <a routerLink="/detail/{{player.id}}">
+      <span class="badge">{{player.id}}</span> {{player.name}}
+    </a>
   </li>
 </ul>
 <!--
@@ -14,4 +22,4 @@
   [player] 裡的  property "player" 必須是一個帶有 @Input() decorator 的輸入屬性
   因為外部的 PlayersComponent 將會繫結到他
 -->
-<app-player-detail [player]="selectedPlayer"></app-player-detail>
+<!-- <app-player-detail [player]="selectedPlayer"></app-player-detail> -->

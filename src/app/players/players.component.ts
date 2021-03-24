@@ -17,7 +17,7 @@ export class PlayersComponent implements OnInit {
   ) { }
 
   players: Player[];
-  selectedPlayer: Player;
+  // selectedPlayer: Player;
 
   // getPlayers(): void {
   //   this.players = this.playerService.getPlayers();
@@ -34,11 +34,14 @@ export class PlayersComponent implements OnInit {
       .subscribe(dataFromService => this.players = dataFromService);
   }
 
-  onSelect(player: Player): void {
-    this.selectedPlayer = player;
-    // 如果字串內要傳入變數, 則要用反引號包 `...${variable.property}`, 純字串使用普通引號 'string string string'
-    this.messageService.add(`PlayersComponent: Selected player id=${player.id}`)
-  }
+
+  // 以下為舊版本, 如要反註解, 請將上面的 selectedPlayer: Player; 一起反註解
+
+  // onSelect(player: Player): void {
+  //   this.selectedPlayer = player;
+  //   // 如果字串內要傳入變數, 則要用反引號包 `...${variable.property}`, 純字串使用普通引號 'string string string'
+  //   this.messageService.add(`PlayersComponent: Selected player id=${player.id}`);
+  // }
 
   ngOnInit(): void {
     this.getPlayers();
